@@ -50,14 +50,14 @@ public class MakeChange {
 
 		penny = ((totalToGiveBack % 20) % 10 % 5 % 1) * 100 % 25 % 10 % 5 / 1;
 
-		double totalDenominators1 = ten + five + one + quarter + dime + nickel + penny;
+		double totalDenominators1 = ten + five + one + quarter + dime + nickel + Math.round(penny);
 		double totalDenominators2 = totalDenominators1 - ten;
 		double totalDenominators3 = totalDenominators2 - five;
 		double totalDenominators4 = totalDenominators3 - one;
 		double totalDenominators5 = totalDenominators4 - quarter;
 		double totalDenominators6 = totalDenominators5 - dime;
 		double totalDenominators7 = totalDenominators6 - nickel;
-		double totalDenominators8 = totalDenominators7 - penny;
+		double totalDenominators8 = totalDenominators7 - Math.round(penny);
 
 		for (totalToGiveBack = .01; totalToGiveBack < 1; totalToGiveBack++) {
 			System.out.print("Give back ");
